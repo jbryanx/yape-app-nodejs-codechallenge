@@ -1,82 +1,39 @@
-# Yape Code Challenge :rocket:
+# Yape Challenge Code
 
-Our code challenge will let you marvel us with your Jedi coding skills :smile:. 
+## Overview
+This project ensures secure financial transactions by seamlessly integrating an anti-fraud microservice. This solution validates every transaction, providing real-time status updates for enhanced security and transparency in the financial operations.
 
-Don't forget that the proper way to submit your work is to fork the repo and create a PR :wink: ... have fun !!
+## Tech Stack
+- Server: NodeJS v.16.17.0
+- Programming language: Typescript v4
+- Framework: ExpressJS
+- ORM: TypeORM
+- DB: PostgreSql
+- MS Communication: Apache Kafka
+- Logging: Log4js
 
-- [Problem](#problem)
-- [Tech Stack](#tech_stack)
-- [Send us your challenge](#send_us_your_challenge)
+### ms-suscriber-api
+lorem ipsum dolor sit amet...
 
-# Problem
+### ms-publisher-api
+lorem ipsum dolor sit amet...
 
-Every time a financial transaction is created it must be validated by our anti-fraud microservice and then the same service sends a message back to update the transaction status.
-For now, we have only three transaction statuses:
+### Enviroment vars
+- server=localhost // DB server path
+- port=5432 // DB server port
+- database=bd1 // DB name
+- username=postgres // DB username
+- password=postgres // DB password
+- antifraud=https://localhost:9999 // antifraud path
 
-<ol>
-  <li>pending</li>
-  <li>approved</li>
-  <li>rejected</li>  
-</ol>
+### Kafka
+lorem ipsum dolor sit amet...
 
-Every transaction with a value greater than 1000 should be rejected.
+### Antifraud service
+lorem ipsum dolor sit amet...
 
-```mermaid
-  flowchart LR
-    Transaction -- Save Transaction with pending Status --> transactionDatabase[(Database)]
-    Transaction --Send transaction Created event--> Anti-Fraud
-    Anti-Fraud -- Send transaction Status Approved event--> Transaction
-    Anti-Fraud -- Send transaction Status Rejected event--> Transaction
-    Transaction -- Update transaction Status event--> transactionDatabase[(Database)]
-```
+### Logs
+lorem ipsum dolor sit amet...
 
-# Tech Stack
-
-<ol>
-  <li>Node. You can use any framework you want (i.e. Nestjs with an ORM like TypeOrm or Prisma) </li>
-  <li>Any database</li>
-  <li>Kafka</li>    
-</ol>
-
-We do provide a `Dockerfile` to help you get started with a dev environment.
-
-You must have two resources:
-
-1. Resource to create a transaction that must containt:
-
-```json
-{
-  "accountExternalIdDebit": "Guid",
-  "accountExternalIdCredit": "Guid",
-  "tranferTypeId": 1,
-  "value": 120
-}
-```
-
-2. Resource to retrieve a transaction
-
-```json
-{
-  "transactionExternalId": "Guid",
-  "transactionType": {
-    "name": ""
-  },
-  "transactionStatus": {
-    "name": ""
-  },
-  "value": 120,
-  "createdAt": "Date"
-}
-```
-
-## Optional
-
-You can use any approach to store transaction data but you should consider that we may deal with high volume scenarios where we have a huge amount of writes and reads for the same data at the same time. How would you tackle this requirement?
-
-You can use Graphql;
-
-# Send us your challenge
-
-When you finish your challenge, after forking a repository, you **must** open a pull request to our repository. There are no limitations to the implementation, you can follow the programming paradigm, modularization, and style that you feel is the most appropriate solution.
-
-If you have any questions, please let us know.
+#### Optionals
+lorem ipsum dolor sit amet...
