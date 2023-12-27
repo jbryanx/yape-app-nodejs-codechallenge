@@ -41,19 +41,19 @@ lorem ipsum dolor sit amet...
 ## Optionals
 To address the high-volume scenarios with a significant amount of concurrent reads and writes for transaction data, especially when utilizing GraphQL, you can employ the following strategies:
 
-- Database Sharding:
+### Database Sharding:
 Distribute the transaction data across multiple database servers based on a shard key (e.g., transaction ID, user ID). This allows for parallel reads and writes, improving overall throughput.
 
-- Caching:
+### Caching:
 Implement caching mechanisms, both at the GraphQL layer and the database layer, to reduce the load on the database for frequently accessed data. Consider using in-memory caches or distributed caching solutions.
 
-- GraphQL Batch Processing:
+### GraphQL Batch Processing:
 Leverage GraphQL batch processing techniques to efficiently fetch and process multiple requests in a single database query. Tools like DataLoader can help in batching and caching requests to optimize database interactions.
 
-- Indexes and Database Optimization:
+### Indexes and Database Optimization:
 Ensure that the database is properly indexed based on the common query patterns in your GraphQL schema. Optimize database queries and schema design to minimize the impact of high read and write volumes.
 
-- Read Replicas:
+### Read Replicas:
 Set up read replicas of the database to handle read-intensive operations. This allows for horizontal scaling of read operations, distributing the load across multiple replica servers.
 
 ### Asynchronous Processing:
