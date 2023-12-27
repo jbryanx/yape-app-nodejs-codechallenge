@@ -5,11 +5,13 @@ This project ensures secure financial transactions by seamlessly integrating an 
 
 ## Architecture
 Microservices architecture, where a financial transaction triggers validation through an anti-fraud microservice, seamlessly updating its status based on a defined rule set. Transactions exceeding 1000 are automatically rejected, ensuring a dynamic and secure system with statuses of pending, approved, or rejected.
-1. Transaction Microservice
+
+### Transaction Microservice
 - createTransaction(transactionDetails):  Initiates a new financial transaction with the provided details.
 - updateTransaction(transactionId, newStatus): Updates the status of a transaction based on the result of anti-fraud validation.
 - getTransactionStatus(transactionId): Retrieves the current status of a given transaction.
-2. Antifraud Microservice
+
+### Antifraud Microservice
 - validateTransaction(transactionDetails): Performs anti-fraud checks on the transaction.
 
 ## Tech Stack
