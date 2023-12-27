@@ -6,16 +6,13 @@ This project ensures secure financial transactions by seamlessly integrating an 
 ## Architecture
 Microservices architecture, where a financial transaction triggers validation through an anti-fraud microservice, seamlessly updating its status based on a defined rule set. Transactions exceeding 1000 are automatically rejected, ensuring a dynamic and secure system with statuses of pending, approved, or rejected.
 
-### Transaction Microservice
+### Transactions Microservice
 - createTransaction(transactionDetails):  Initiates a new financial transaction with the provided details.
-- updateTransaction(transactionId, newStatus): Updates the status of a transaction based on the result of anti-fraud validation.
+- updateTransactionStatus(transactionId, newStatus): Updates the status of a transaction based on the result of anti-fraud validation.
 - getTransactionStatus(transactionId): Retrieves the current status of a given transaction.
 
 ### Anti-fraud Microservice
 - validateTransaction(transactionDetails): Performs anti-fraud checks on the transaction.
-
-### Kafka
-
 
 ## Tech stack
 - Server: NodeJS v.16.17.0
@@ -36,7 +33,7 @@ Microservices architecture, where a financial transaction triggers validation th
 - antifraud=https://localhost:9999 // antifraud path
 
 ### Logs
-lorem ipsum dolor sit amet...
+Using log4js for each microservice, communications and persistance.
 
 ## Optionals
 To address the high-volume scenarios with a significant amount of concurrent reads and writes for transaction data, especially when utilizing GraphQL, you can employ the following strategies:
