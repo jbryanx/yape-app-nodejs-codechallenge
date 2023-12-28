@@ -15,22 +15,23 @@ Microservices architecture, where a financial transaction triggers validation th
 - validateTransaction(transactionDetails): Performs anti-fraud checks on the transaction.
 
 ## Tech stack
-- Server: NodeJS v.16.17.0
-- Programming language: Typescript v4
-- Framework: ExpressJS
-- DB: PostgreSql
+- Server: NodeJS v.18.19.0, NPM v.10.2.3
+- Programming languages: Typescript
+- Framework: NestJS
+- DB: PostgreSQL
 - ORM: TypeORM
 - MS communications: Apache Kafka
 - Logging: Log4js
 - Unit testing: Jest
 
-### Enviroment vars
-- server=localhost // DB server path
-- port=5432 // DB server port
-- database=bd1 // DB name
-- username=postgres // DB username
-- password=postgres // DB password
-- antifraud=https://localhost:9999 // antifraud path
+### Enviroment vars (used in .env files)
+- server=localhost // DB_HOST DB server path
+- port=5432 // DB_PORT DB server port
+- database=postgres // DB name
+- username=postgres // DB_USERNAME DB username
+- password=postgres // DB_PASSWORD DB password
+- ms-transactions-url=https://localhost:3000 // transactions microservice url
+- ms-antifraud-url=https://localhost:3001 // antifraud microservice url
 
 ### Logs
 Using log4js for each microservice, communications and persistance.
