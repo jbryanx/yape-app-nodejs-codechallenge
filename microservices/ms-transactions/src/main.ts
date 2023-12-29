@@ -19,9 +19,9 @@ async function bootstrap() {
           ],
         },
         consumer: {
-          groupId: process.env.KAFKA_GROUP_ID
-            ? process.env.KAFKA_GROUP_ID
-            : 'yape-kafka-consumers',
+          groupId: process.env.KAFKA_GROUP_VALIDATIONS_ID
+            ? process.env.KAFKA_GROUP_VALIDATIONS_ID
+            : 'yape-kafka-validations-consumers',
         },
         subscribe: {
           fromBeginning: true,

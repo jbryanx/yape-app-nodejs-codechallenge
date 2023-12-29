@@ -1,8 +1,8 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, OnModuleDestroy, OnModuleInit } from '@nestjs/common';
 import { Client, ClientKafka, Transport } from '@nestjs/microservices';
 
 @Injectable()
-export class KafkaService {
+export class KafkaService implements OnModuleInit, OnModuleDestroy {
   @Client({
     transport: Transport.KAFKA,
     options: {
@@ -33,8 +33,13 @@ export class KafkaService {
   }
 
   sendMessage(message: string) {
-    return this.client
-      .send('transactions-topic', message)
-      .subscribe((m) => console.log('Message: ' + m));
+    this.client.emit(
+      process.env.KAFKA_TOPIC ? process.env.KAFKA_TOPIC : 'transactions-topic',
+      message,
+    );
+  }
+
+  onModuleDestroy() {
+    this.client.close();
   }
 }

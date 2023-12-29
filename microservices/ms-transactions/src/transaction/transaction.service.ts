@@ -42,7 +42,7 @@ export class TransactionService {
       const entity = await this.transactionRepository.update(id, {
         status: status,
       });
-      this.kafkaService.sendMessage(JSON.stringify(entity));
+      // this.kafkaService.sendMessage(JSON.stringify(entity));
       return entity;
     } catch (err) {
       this.logger.debug('Error updating transaction ' + err);
