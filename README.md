@@ -42,6 +42,17 @@ Important: Use the .env.template file and save it as .env.
 Using log4js for each microservice, communications and persistance.
 
 ## Testing locally
+### Example POST request
+```
+curl --location 'localhost:3000/transaction' \
+--header 'Content-Type: application/json' \
+--data '{
+  "accountExternalIdDebit": "Guid",
+  "accountExternalIdCredit": "Guid",
+  "transferTypeId": 1,
+  "value": 999
+}'
+```
 ### Execute a Postman Collection test comprising 100 requests with varying amounts using random values
 ![alt text](https://github.com/jbryanx/yape-app-nodejs-codechallenge/blob/develop/img/test3.png?raw=true)
 
