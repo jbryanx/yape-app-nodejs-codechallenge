@@ -68,6 +68,12 @@ curl --location 'localhost:3000/transaction' \
 ### The Validations microservice is operational and successfully showing logs
 ![alt text](https://github.com/jbryanx/yape-app-nodejs-codechallenge/blob/develop/img/test5.png?raw=true)
 
+### The Validations microservice project has successfully passed its unit tests.
+![alt text](https://github.com/jbryanx/yape-app-nodejs-codechallenge/blob/develop/img/test7.png?raw=true)
+
+### The Transactions microservice is operational and successfully showing logs
+![alt text](https://github.com/jbryanx/yape-app-nodejs-codechallenge/blob/develop/img/test8.png?raw=true)
+
 
 ## Optionals
 To address the high-volume scenarios with a significant amount of concurrent reads and writes for transaction data, especially when utilizing GraphQL, you can employ the following strategies:
