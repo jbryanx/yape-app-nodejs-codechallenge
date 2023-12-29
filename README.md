@@ -42,14 +42,20 @@ Microservices architecture, where a financial transaction triggers validation th
 Using log4js for each microservice, communications and persistance.
 
 ## Testing locally
-### Postman collection run test with 100 request with multiple random values
+### Execute a Postman Collection test comprising 100 requests with varying amounts using random values
 ![alt text](https://github.com/jbryanx/yape-app-nodejs-codechallenge/blob/develop/img/test3.png?raw=true)
 
-### Transactions topic in Kafka Server
+### transactions-topic in Kafka Server sending messages
 ![alt text](https://github.com/jbryanx/yape-app-nodejs-codechallenge/blob/develop/img/test1.png?raw=true)
 
-### Validations topic in Kafka Server
+### validations-topic in Kafka Server sending messages
 ![alt text](https://github.com/jbryanx/yape-app-nodejs-codechallenge/blob/develop/img/test2.png?raw=true)
+
+### The Transactions microservice is operational and successfully showing logs
+![alt text](https://github.com/jbryanx/yape-app-nodejs-codechallenge/blob/develop/img/test4.png?raw=true)
+
+### The Validations microservice is operational and successfully showing logs
+![alt text](https://github.com/jbryanx/yape-app-nodejs-codechallenge/blob/develop/img/test5.png?raw=true)
 
 
 ## Optionals
