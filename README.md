@@ -28,7 +28,7 @@ Microservices architecture, where a financial transaction triggers validation th
 - Unit testing: Jest
 
 ### Enviroment vars (used in .env files)
-* Important: Use the .env.template file and save it as .env.
+Important: Use the .env.template file and save it as .env.
 - server=localhost // DB_HOST DB server path
 - port=5432 // DB_PORT DB server port
 - database=postgres // DB name
