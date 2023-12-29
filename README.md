@@ -69,10 +69,10 @@ curl --location 'localhost:3000/transaction' \
 ![alt text](https://github.com/jbryanx/yape-app-nodejs-codechallenge/blob/develop/img/test5.png?raw=true)
 
 ### The Validations microservice project has successfully passed its unit tests.
-![alt text](https://github.com/jbryanx/yape-app-nodejs-codechallenge/blob/develop/img/test7.png?raw=true)
+![alt text](https://github.com/jbryanx/yape-app-nodejs-codechallenge/blob/develop/img/test6.png?raw=true)
 
 ### The Transactions microservice is operational and successfully showing logs
-![alt text](https://github.com/jbryanx/yape-app-nodejs-codechallenge/blob/develop/img/test8.png?raw=true)
+![alt text](https://github.com/jbryanx/yape-app-nodejs-codechallenge/blob/develop/img/test7.png?raw=true)
 
 
 ## Optionals
