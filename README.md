@@ -7,12 +7,15 @@ This project ensures secure financial transactions by seamlessly integrating an 
 Microservices architecture, where a financial transaction triggers validation through an anti-fraud microservice, seamlessly updating its status based on a defined rule set. Transactions exceeding 1000 are automatically rejected, ensuring a dynamic and secure system with statuses of pending, approved, or rejected.
 
 ### Transactions Microservice
-- createTransaction(transactionDetails):  Initiates a new financial transaction with the provided details.
-- updateTransactionStatus(transactionId, newStatus): Updates the status of a transaction based on the result of anti-fraud validation.
-- getTransactionStatus(transactionId): Retrieves the current status of a given transaction.
+- getAll(): Get all transactions. For interacting and testing purposes.
+- getOne(): Get a transaction by ID. For interacting and testing purposes.
+- save(transaction): Store a transaction in PostgreSQL. For interacting and testing purposes.
+- updateStatus(transactionId, newStatus): Update a transaction status by id and Status enum, based on the result of anti-fraud validation.
 
 ### Anti-fraud Microservice
-- validateTransaction(transactionDetails): Performs anti-fraud checks on the transaction.
+- processTransaction(transaction): Process transaction on creation in Kafka topic by Transaction microservice.
+- validateTransaction(transaction): Performs anti-fraud checks on the transaction and process business rules (> 1000).
+- sendStatus(transactionId, status): Send transaction status validation results to Kafka topic.
 
 ## Tech stack
 - Server: NodeJS v.18.19.0, NPM v.10.2.3
@@ -25,13 +28,15 @@ Microservices architecture, where a financial transaction triggers validation th
 - Unit testing: Jest
 
 ### Enviroment vars (used in .env files)
+* Important: Use the .env.template file and save it as .env.
 - server=localhost // DB_HOST DB server path
 - port=5432 // DB_PORT DB server port
 - database=postgres // DB name
 - username=postgres // DB_USERNAME DB username
 - password=postgres // DB_PASSWORD DB password
-- ms-transactions-url=https://localhost:3000 // transactions microservice url
-- ms-antifraud-url=https://localhost:3001 // antifraud microservice url
+
+### Kafka
+*Important: Create mandatory topics in order to run the project: 'transactions-topic' and 'validations-topic'.
 
 ### Logs
 Using log4js for each microservice, communications and persistance.
