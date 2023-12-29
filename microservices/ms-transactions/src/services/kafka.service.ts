@@ -7,15 +7,19 @@ export class KafkaService {
     transport: Transport.KAFKA,
     options: {
       client: {
-        clientId: process.env.clientID ? process.env.clientID : 'yape-kafka',
+        clientId: process.env.KAFKA_CLIENT_ID
+          ? process.env.KAFKA_CLIENT_ID
+          : 'transaction-ms-client',
         brokers: [
-          process.env.kafkaServer ? process.env.kafkaServer : 'localhost:9092',
+          process.env.KAFKA_SERVER
+            ? process.env.KAFKA_SERVER
+            : 'localhost:9092',
         ],
       },
       consumer: {
-        groupId: process.env.groupId
-          ? process.env.groupId
-          : 'yape-kafka-consumer',
+        groupId: process.env.KAFKA_GROUP_ID
+          ? process.env.KAFKA_GROUP_ID
+          : 'yape-kafka-consumers',
       },
     },
   })
@@ -23,7 +27,7 @@ export class KafkaService {
 
   async onModuleInit() {
     this.client.subscribeToResponseOf(
-      process.env.topic ? process.env.topic : 'transactions-topic',
+      process.env.KAFKA_TOPIC ? process.env.KAFKA_TOPIC : 'transactions-topic',
     );
     await this.client.connect();
   }

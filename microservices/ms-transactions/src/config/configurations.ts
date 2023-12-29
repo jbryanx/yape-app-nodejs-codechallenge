@@ -8,5 +8,4 @@ export default () => ({
     name: process.env.DB_NAME,
     ssl: false,
   },
-  kafka: {},
 });
