@@ -41,6 +41,17 @@ Microservices architecture, where a financial transaction triggers validation th
 ### Logs
 Using log4js for each microservice, communications and persistance.
 
+## Testing locally
+### Postman collection run test with 100 request with multiple random values
+![alt text](https://github.com/jbryanx/yape-app-nodejs-codechallenge/blob/develop/img/test3.png?raw=true)
+
+### Transactions topic in Kafka Server
+![alt text](https://github.com/jbryanx/yape-app-nodejs-codechallenge/blob/develop/img/test1.png?raw=true)
+
+### Validations topic in Kafka Server
+![alt text](https://github.com/jbryanx/yape-app-nodejs-codechallenge/blob/develop/img/test2.png?raw=true)
+
+
 ## Optionals
 To address the high-volume scenarios with a significant amount of concurrent reads and writes for transaction data, especially when utilizing GraphQL, you can employ the following strategies:
 
