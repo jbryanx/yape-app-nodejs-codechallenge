@@ -11,6 +11,6 @@ export class AppController {
     process.env.KAFKA_TOPIC ? process.env.KAFKA_TOPIC : 'transactions-topic',
   )
   handleTransactionCreation(@Payload(ValidationPipe) data: TransactionDto) {
-    this.appService.getTransaction(data);
+    this.appService.processTransaction(data);
   }
 }

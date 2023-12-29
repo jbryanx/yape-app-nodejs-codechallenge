@@ -11,7 +11,7 @@ async function bootstrap() {
         client: {
           clientId: process.env.KAFKA_CLIENT_ID
             ? process.env.KAFKA_CLIENT_ID
-            : 'yape-kafka-antifraud-ms',
+            : 'antifraud-ms-client',
           brokers: [
             process.env.KAFKA_SERVER
               ? process.env.KAFKA_SERVER
